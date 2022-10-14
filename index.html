@@ -1,102 +1,89 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Blip Discs</title>
+  <head>
+    <title>Blip Discs</title>
 
-        <script src=
-        "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-            </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <style type="text/css">
+    <style type="text/css">
+      #header {
+        margin: 20px;
+      }
 
-            #header {
-                float: right;
-            }
+      #navigation {
+        width: 150px;
+      }
 
-            .navigation {
-                vertical-align: bottom;
-                display: inline-block;
-                clear: both;
-                margin-bottom: 10px;
-            }
-            
-            #nav-bar { 
-                /* may have to abandon float because these will just float to the top, henve they are not alignign at bottom  */
-                /* perahps we need a simpler solution */
-                clear: both;
-                float: left;
-                font-size: 120%;
-                font-weight: bold;
-            }
-            
-             #socials {
-                /* float: left; */
-                color: gray;
-            } 
+      #nav-bar {
+        font-size: 120%;
+      }
 
-            #main {
-                clear: both;
-            }
+      #socials {
+        color: gray;
+      }
 
-            body {
-                font-family: Helvetica;
-            }
+      #main {
+        flex-grow: 1;
+        text-align: center;
+      }
 
-            a {
-                
-                text-decoration: none;
-            }
+      body {
+        display: flex;
+        font-family: Helvetica;
+      }
 
-            a, a:visited, a:hover, a:active {
-                color: inherit;
-            }
-        </style>
-    </head>
-    <body>
+      a {
+        text-decoration: none;
+      }
 
-    <div id="header">
-        <img src="bliplogo.jpeg" width="100"></img>
+      a,
+      a:visited,
+      a:hover,
+      a:active {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navigation">
+      <div id="header">
+        <img src="bliplogo.jpeg" width="100" />
+      </div>
+
+      <div id="nav-bar">
+        <a href="#" id="news-button">News</a>
+        <a href="https://www.discogs.com/label/806045-Blip-Discs">Discography</a>
+        <a href="https://blipdiscs.bandcamp.com" target="_blank">Bandcamp</a>
+        <a href="#" id="contact-button"> Contact </a>
+      </div>
+
+      <div id="socials">
+        <p>
+          <a href="https://www.facebook.com/blip-discs" target="_blank">// Facebook</a><br />
+          <a href="https://www.instagram.com/tomblip" target="_blank">// Instagram</a><br />
+          <a href="https://www.soundcloud.com/blip-discs" target="_blank">// SoundCloud</a><br />
+          <a href="https://www.twitter.com/blipdiscs" target="_blank">// Twitter</a><br />
+        </p>
+      </div>
     </div>
+    <div id="main"></div>
 
-    <div id="socials">
-                <p> 
-                    <a href="https://www.facebook.com/blip-discs" target="_blank">Facebook</a> //
-                    <a href="https://www.instagram.com/tomblip" target="_blank">Instagram</a> //
-                    <a href="https://www.soundcloud.com/blip-discs" target="_blank">SoundCloud</a> // 
-                    <a href="https://www.twitter.com/blipdiscs" target="_blank">Twitter</a>
-                </p>
-    </div>
+    <script>
+      $(document).ready(function () {
+        $("#main").load("news.html");
+      });
 
-    <div id="nav-bar" class="navigation">
-        <table>
-            <tr>
-                <th><a href="#" id="news-button">News</a></th>
-                <th><a href="https://www.discogs.com/label/806045-Blip-Discs">Discography</a></th>
-                <th><a href="https://www.blipdiscs.bandcamp.com" target="_blank">Bandcamp</a> </th>
-                <th><a href="#" id="contact-button"> Contact </a></th>
-            </tr>
-        </table>
-    </div>
+      $(document).ready(function () {
+        $("#news-button").click(function () {
+          $("#main").load("news.html");
+        });
+      });
 
-        <div id="main"></div>
-
-        <script>
-            $(document).ready(function () {
-                    $('#main').load('news.html');
-                });
-            
-            $(document).ready(function () {
-                $('#news-button').click(function () {
-                    $('#main').load('news.html');
-                });
-            });
-
-            $(document).ready(function () {
-                $('#contact-button').click(function () {
-                    $('#main').load('contact.html');
-                });
-            });
-        </script>
-
-    </body>
+      $(document).ready(function () {
+        $("#contact-button").click(function () {
+          $("#main").load("contact.html");
+        });
+      });
+    </script>
+  </body>
 </html>
