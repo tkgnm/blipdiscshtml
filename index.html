@@ -17,6 +17,7 @@
                 vertical-align: bottom;
                 display: inline-block;
                 clear: both;
+                margin-bottom: 10px;
             }
             
             #nav-bar { 
@@ -30,6 +31,7 @@
             
              #socials {
                 /* float: left; */
+                color: gray;
             } 
 
             #main {
@@ -39,8 +41,9 @@
             body {
                 font-family: Helvetica;
             }
-            
+
             a {
+                
                 text-decoration: none;
             }
 
@@ -57,34 +60,40 @@
 
     <div id="socials">
                 <p> 
-                    <a href="https://www.instagram.com/tomblip" target="_blank">Instagram</a> //
                     <a href="https://www.facebook.com/blip-discs" target="_blank">Facebook</a> //
+                    <a href="https://www.instagram.com/tomblip" target="_blank">Instagram</a> //
                     <a href="https://www.soundcloud.com/blip-discs" target="_blank">SoundCloud</a> // 
-                    <a href="https://www.twitter.com/blip-discs" target="_blank">Twitter</a>
+                    <a href="https://www.twitter.com/blipdiscs" target="_blank">Twitter</a>
                 </p>
     </div>
 
     <div id="nav-bar" class="navigation">
-       <p> 
-        <a href="#" id="latest-release-button"> Latest Release </a> | 
-        <a href="https://www.discogs.com/label/806045-Blip-Discs"> Discography </a> | 
-        <a href="https://www.blipdiscs.bandcamp.com"> Bandcamp </a> | 
-        <a href="#" id="contact-button"> Contact </a> </p>
+        <table>
+            <tr>
+                <th><a href="#" id="news-button">News</a></th>
+                <th><a href="https://www.discogs.com/label/806045-Blip-Discs">Discography</a></th>
+                <th><a href="https://www.blipdiscs.bandcamp.com" target="_blank">Bandcamp</a> </th>
+                <th><a href="#" id="contact-button"> Contact </a></th>
+            </tr>
+        </table>
     </div>
 
         <div id="main"></div>
 
         <script>
             $(document).ready(function () {
-                $('#contact-button').click(function () {
-                    $('#main').load('contact.html');
+                    $('#main').load('news.html');
+                });
+            
+            $(document).ready(function () {
+                $('#news-button').click(function () {
+                    $('#main').load('news.html');
                 });
             });
 
             $(document).ready(function () {
-                $('#latest-release-button').click(function () {
-                    $('#main').load('latest-release.html');
-                    console.log("button clicked")
+                $('#contact-button').click(function () {
+                    $('#main').load('contact.html');
                 });
             });
         </script>
