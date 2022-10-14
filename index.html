@@ -2,6 +2,11 @@
 <html>
     <head>
         <title>Blip Discs</title>
+
+        <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+            </script>
+
         <style type="text/css">
 
             #header {
@@ -55,23 +60,34 @@
                     <a href="https://www.instagram.com/tomblip" target="_blank">Instagram</a> //
                     <a href="https://www.facebook.com/blip-discs" target="_blank">Facebook</a> //
                     <a href="https://www.soundcloud.com/blip-discs" target="_blank">SoundCloud</a> // 
-                    <a href="https://www.twitter.com/blip-discs" target="_blank">Twitter</a> //
+                    <a href="https://www.twitter.com/blip-discs" target="_blank">Twitter</a>
                 </p>
     </div>
 
     <div id="nav-bar" class="navigation">
        <p> 
-        <a href="index.html"> Latest Release </a> | 
+        <a href="#" id="latest-release-button"> Latest Release </a> | 
         <a href="https://www.discogs.com/label/806045-Blip-Discs"> Discography </a> | 
         <a href="https://www.blipdiscs.bandcamp.com"> Bandcamp </a> | 
-        <a href="contact.html"> Contact </a> </p>
+        <a href="#" id="contact-button"> Contact </a> </p>
     </div>
 
-        <div id="main">
-            <p>
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/667958702&color=ff5500&hide_related=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/blip-discs" title="Blip Discs" target="_blank" style="color: #cccccc; text-decoration: none;">Blip Discs</a> · <a href="https://soundcloud.com/blip-discs/tom-blip-swordman-kitala-kitala-beat-bbc-6music-rip" title="Tom Blip &amp; Swordman Kitala - Kitala Beat (BBC 6Music Rip)" target="_blank" style="color: #cccccc; text-decoration: none;">Tom Blip &amp; Swordman Kitala - Kitala Beat (BBC 6Music Rip)</a></div> 
-            </p>
-        </div>
-        
+        <div id="main"></div>
+
+        <script>
+            $(document).ready(function () {
+                $('#contact-button').click(function () {
+                    $('#main').load('contact.html');
+                });
+            });
+
+            $(document).ready(function () {
+                $('#latest-release-button').click(function () {
+                    $('#main').load('latest-release.html');
+                    console.log("button clicked")
+                });
+            });
+        </script>
+
     </body>
 </html>
